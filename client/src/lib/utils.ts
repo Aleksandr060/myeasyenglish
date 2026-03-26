@@ -129,7 +129,8 @@ export const questionTypeLabel: Record<Question["type"], string> = {
   vocabulary: "Vocabulary Quiz",
   translation: "Translation Drill",
   listening: "Listening",
-  fillblank: "Fill in the Blank"
+  fillblank: "Fill in the Blank",
+  speaking: "Speaking"
 };
 
 export const formatDate = (value: string | null) => {

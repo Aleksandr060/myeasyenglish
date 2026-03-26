@@ -125,6 +125,10 @@ export function LessonPage() {
   };
 
   const buildPronunciationState = (transcript: string) => {
+    if (!question || (question.type !== "translation" && question.type !== "speaking")) {
+      return null;
+    }
+
     const assessment = assessPronunciation(question.correctAnswer, transcript);
     const message =
       assessment.score >= 90 && (question.type !== "speaking" || strictSpeakingMatches(question.correctAnswer, transcript))
@@ -144,6 +148,8 @@ export function LessonPage() {
   };
 
   const startSpeechRecognition = () => {
+    if (!question) return;
+
     if (
       (question.type !== "translation" && question.type !== "speaking") ||
       !speechRecognitionSupported ||

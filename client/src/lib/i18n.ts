@@ -239,11 +239,11 @@ export const t = (
   key: TranslationKey,
   params?: Record<string, string | number>
 ) => {
-  const template = translations[language][key] || translations.en[key];
+  const template = String(translations[language][key] || translations.en[key]);
 
   if (!params) return template;
 
-  return Object.entries(params).reduce(
+  return Object.entries(params).reduce<string>(
     (result, [name, value]) => result.replace(`{${name}}`, String(value)),
     template
   );

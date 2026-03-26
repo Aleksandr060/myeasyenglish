@@ -1,6 +1,6 @@
 # My Easy English
 
-Full-stack web app for learning English in a game-like flow with lessons, XP, streaks, hearts, levels and a leaderboard.
+Full-stack English learning app with lessons, XP, streaks, hearts, leaderboard, speaking practice and CEFR-style levels.
 
 ## Stack
 
@@ -16,12 +16,13 @@ Full-stack web app for learning English in a game-like flow with lessons, XP, st
 
 - Email/password registration and login with JWT stored in `localStorage`
 - Protected routes for the dashboard, lessons and leaderboard
-- 15 seeded lessons with Russian and English content
-- 4 exercise types: vocabulary, translation, listening and fill-in-the-blank
-- XP, streak, hearts, lesson progress and CEFR-style levels (`A1 -> A2 -> B1 -> B2`)
+- Seeded lessons with Russian and English content across `A1 -> C2`
+- 5 exercise types: vocabulary, translation, listening, fill-in-the-blank and speaking
+- XP, streak, hearts, lesson progress and CEFR-style levels (`A1 -> A2 -> B1 -> B2 -> C1 -> C2`)
 - Dark/light theme toggle
 - Lesson completion confetti with `canvas-confetti`
 - Top-10 leaderboard by XP
+- Speaking practice with browser speech recognition and score feedback
 
 ## Project Structure
 
@@ -53,9 +54,7 @@ npm install
 2. Create the SQLite database and Prisma tables:
 
 ```bash
-cd server
-npx prisma migrate dev --name init
-cd ..
+npx prisma db push --schema server/prisma/schema.prisma
 ```
 
 3. Seed lessons and demo data:
@@ -91,8 +90,42 @@ npm run dev
 - `POST /api/lessons/:id/complete`
 - `GET /api/leaderboard`
 
+## Production Deployment
+
+This project is now prepared for a single-server cloud deployment:
+
+- the React client is built into `client/dist`
+- Express serves the static frontend in production
+- API requests can use relative `/api`
+- Docker support is included
+- Prisma can initialize the SQLite schema with `db push`
+
+### Option 1: Docker
+
+```bash
+docker compose up --build -d
+```
+
+The app will be available on:
+
+- `http://localhost:4000`
+
+### Option 2: Node server on a VPS/cloud VM
+
+```bash
+npm install
+npm run build
+npx prisma db push --schema server/prisma/schema.prisma
+npm run start --workspace server
+```
+
+Then open:
+
+- `http://YOUR_SERVER_IP:4000`
+
 ## Notes
 
-- Lesson completion awards up to `100 XP` per lesson, based on correct answers.
-- Translation exercises use fuzzy matching on both client and server.
-- Seed data was structured so `options` are always stored as JSON arrays, which is the field most likely to break in Prisma seed scripts.
+- SQLite is fine for a single VPS or one-container deployment. For heavier traffic or multi-instance scaling, switch Prisma to PostgreSQL.
+- Lesson completion awards XP based on correct answers.
+- Translation and speaking exercises use fuzzy matching, with speaking checked more strictly.
+- Browser speech recognition depends on the user's browser and is not a full phoneme-level pronunciation engine.
