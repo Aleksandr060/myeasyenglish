@@ -1,0 +1,75 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+enum Level {
+  A1
+  A2
+  B1
+  B2
+  C1
+  C2
+}
+
+enum QuestionType {
+  vocabulary
+  translation
+  listening
+  fillblank
+  speaking
+}
+
+model User {
+  id           String         @id @default(cuid())
+  email        String         @unique
+  password     String
+  username     String
+  xp           Int            @default(0)
+  level        Level          @default(A1)
+  streak       Int            @default(0)
+  lastLogin    DateTime?
+  progress     UserProgress[]
+  createdAt    DateTime       @default(now())
+}
+
+model Lesson {
+  id          String         @id @default(cuid())
+  title       String
+  description String
+  level       Level
+  type        QuestionType
+  xpReward    Int            @default(50)
+  questions   Question[]
+  progress    UserProgress[]
+  createdAt   DateTime       @default(now())
+}
+
+model Question {
+  id            String       @id @default(cuid())
+  lessonId      String
+  lesson        Lesson       @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  type          QuestionType
+  questionText  String
+  correctAnswer String
+  options       Json
+  audioText     String?
+  createdAt     DateTime     @default(now())
+}
+
+model UserProgress {
+  id          String    @id @default(cuid())
+  userId      String
+  lessonId    String
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  lesson      Lesson    @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  completed   Boolean   @default(false)
+  xpEarned    Int       @default(0)
+  completedAt DateTime?
+
+  @@unique([userId, lessonId])
+}
