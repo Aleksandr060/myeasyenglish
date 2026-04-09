@@ -8,8 +8,10 @@ import { useThemeStore } from "./store/theme";
 import { DashboardPage } from "./pages/DashboardPage";
 import { LeaderboardPage } from "./pages/LeaderboardPage";
 import { LessonPage } from "./pages/LessonPage";
+import { LexicalPage } from "./pages/LexicalPage";
 import { LoginPage } from "./pages/LoginPage";
 import { RegisterPage } from "./pages/RegisterPage";
+import { TheoryPage } from "./pages/TheoryPage";
 
 export default function App() {
   const { token, initialized, setInitialized, setUser, logout } = useAuthStore();
@@ -64,6 +66,8 @@ export default function App() {
         <Route index element={<DashboardPage />} />
         <Route path="lesson/:lessonId" element={<LessonPage />} />
         <Route path="leaderboard" element={<LeaderboardPage />} />
+        <Route path="theory" element={<TheoryPage />} />
+        <Route path="lexical" element={<LexicalPage />} />
       </Route>
       <Route path="*" element={<Navigate to={token ? "/" : "/login"} replace />} />
     </Routes>

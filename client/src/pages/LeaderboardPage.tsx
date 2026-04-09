@@ -27,7 +27,8 @@ export function LeaderboardPage() {
           {entries.map((entry, index) => (
             <div
               key={entry.id}
-              className="flex items-center justify-between rounded-3xl bg-slate-50 px-4 py-4 dark:bg-slate-800/80"
+              className="flex items-center justify-between rounded-3xl border px-4 py-4"
+              data-surface="soft"
             >
               <div className="flex items-center gap-4">
                 <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand/10 font-black text-brand">
@@ -35,7 +36,7 @@ export function LeaderboardPage() {
                 </div>
                 <div>
                   <div className="text-lg font-extrabold">{entry.username}</div>
-                  <div className="text-sm text-slate-500 dark:text-slate-300">
+                  <div className="text-sm" data-text="muted">
                     {t(language, "levelShort")} {entry.level} • {entry.streak} {t(language, "dayStreak")}
                   </div>
                 </div>
@@ -47,7 +48,7 @@ export function LeaderboardPage() {
           ))}
 
           {!entries.length ? (
-            <div className="rounded-3xl bg-slate-50 px-4 py-6 text-sm text-slate-500 dark:bg-slate-800/80 dark:text-slate-300">
+            <div className="rounded-3xl border px-4 py-6 text-sm" data-surface="soft" data-text="muted">
               {t(language, "leaderboardEmpty")}
             </div>
           ) : null}

@@ -43,6 +43,63 @@ export const buildIntermediateSpeakingLessons = (): SeedLesson[] => [
     ]
   },
   {
+    title: "A2 Speaking Travel",
+    description: "Practice spoken travel phrases for tickets, directions and hotel check-in.",
+    level: "A2",
+    type: "speaking",
+    xpReward: 120,
+    questions: [
+      speaking("Я хотел бы забронировать номер на две ночи", "I would like to book a room for two nights", ["I would like to book a room for two nights", "I would like to clean the room tonight", "I would like to visit the room tomorrow"]),
+      speaking("Во сколько начинается посадка?", "What time does boarding start?", ["What time does boarding start?", "What time does the airport close?", "What time does the bus stop?"]),
+      speaking("Можете показать мне это на карте?", "Can you show me that on the map?", ["Can you show me that on the map?", "Can you write me a long message?", "Can you call me in the morning?"]),
+      speaking("Мне нужен столик у окна", "I need a table by the window", ["I need a table by the window", "I need a taxi near the station", "I need a room with a kitchen"]),
+      speaking("Мы ищем музей в центре города", "We are looking for the museum in the city center", ["We are looking for the museum in the city center", "We are visiting the museum after dinner", "We are leaving the city very early"]),
+      speaking("Сколько времени займет поездка?", "How long will the trip take?", ["How long will the trip take?", "How much does the ticket cost?", "How often does the train leave?"]),
+      speaking("Я потерял свой багаж", "I lost my luggage", ["I lost my luggage", "I packed my luggage", "I checked my luggage"]),
+      speaking("Есть ли поблизости аптека?", "Is there a pharmacy nearby?", ["Is there a pharmacy nearby?", "Is there a station abroad?", "Is there a market inside?"]),
+      speaking("Нам нужно выйти на следующей остановке", "We need to get off at the next stop", ["We need to get off at the next stop", "We need to wait at the main station", "We need to buy tickets after lunch"]),
+      speaking("Можно оплатить картой?", "Can I pay by card?", ["Can I pay by card?", "Can I stay in the park?", "Can I travel tomorrow?"])
+    ]
+  },
+  {
+    title: "A2 Speaking Home Life",
+    description: "Talk about home routines, chores, family plans and everyday activities.",
+    level: "A2",
+    type: "speaking",
+    xpReward: 120,
+    questions: [
+      speaking("Я убираю комнату каждую субботу", "I clean my room every Saturday", ["I clean my room every Saturday", "I paint my room every Sunday", "I leave my room every morning"]),
+      speaking("Мой отец готовит ужин по пятницам", "My father cooks dinner on Fridays", ["My father cooks dinner on Fridays", "My father orders lunch on Fridays", "My father watches films on Fridays"]),
+      speaking("После работы мы гуляем с собакой", "After work we walk the dog", ["After work we walk the dog", "After work we feed the cat", "After work we wash the car"]),
+      speaking("Сегодня вечером я стираю одежду", "I am doing the laundry this evening", ["I am doing the laundry this evening", "I am cleaning the kitchen tomorrow", "I am buying new clothes tonight"]),
+      speaking("Моя сестра часто помогает мне на кухне", "My sister often helps me in the kitchen", ["My sister often helps me in the kitchen", "My sister always studies in the bedroom", "My sister usually waits for me outside"]),
+      speaking("На этой неделе к нам приедут гости", "We will have guests this week", ["We will have guests this week", "We had guests last month", "We invite guests every day"]),
+      speaking("Я хочу купить новую лампу для гостиной", "I want to buy a new lamp for the living room", ["I want to buy a new lamp for the living room", "I want to move the sofa to the bedroom", "I want to paint the kitchen wall"]),
+      speaking("Обычно я накрываю на стол", "I usually set the table", ["I usually set the table", "I usually wash the dishes", "I usually open the window"]),
+      speaking("Мы собираемся смотреть фильм после ужина", "We are going to watch a film after dinner", ["We are going to watch a film after dinner", "We are going to cook dinner after work", "We are going to visit friends after school"]),
+      speaking("Я должен вынести мусор", "I have to take out the trash", ["I have to take out the trash", "I have to clean the carpet", "I have to repair the chair"])
+    ]
+  },
+  {
+    title: "A2 Speaking Plans",
+    description: "Speak about shopping, appointments, future plans and everyday errands.",
+    level: "A2",
+    type: "speaking",
+    xpReward: 120,
+    questions: [
+      speaking("Завтра я собираюсь купить новые туфли", "Tomorrow I am going to buy new shoes", ["Tomorrow I am going to buy new shoes", "Tomorrow I am going to wear old shoes", "Tomorrow I am going to clean my shoes"]),
+      speaking("Мне нужно записаться к стоматологу", "I need to make an appointment with the dentist", ["I need to make an appointment with the dentist", "I need to visit the doctor after dinner", "I need to buy medicine at the market"]),
+      speaking("После обеда мы встретимся в торговом центре", "We will meet at the shopping mall after lunch", ["We will meet at the shopping mall after lunch", "We will work at the shopping mall tomorrow", "We will stay at the shopping mall all night"]),
+      speaking("Я ищу куртку на зиму", "I am looking for a jacket for winter", ["I am looking for a jacket for winter", "I am looking for a bag for school", "I am looking for a gift for Anna"]),
+      speaking("Она хочет вернуть это платье", "She wants to return this dress", ["She wants to return this dress", "She wants to try on this dress", "She wants to wash this dress"]),
+      speaking("Я опоздаю на встречу на пять минут", "I will be five minutes late for the meeting", ["I will be five minutes late for the meeting", "I will be ten minutes early for the lesson", "I will be free after the meeting"]),
+      speaking("Нам нужно купить овощи на ужин", "We need to buy vegetables for dinner", ["We need to buy vegetables for dinner", "We need to cook breakfast for guests", "We need to order coffee for work"]),
+      speaking("В следующем месяце я начну новый курс", "I will start a new course next month", ["I will start a new course next month", "I will finish this course next week", "I will repeat the lesson tomorrow"]),
+      speaking("Можно примерить эту рубашку?", "Can I try on this shirt?", ["Can I try on this shirt?", "Can I pay for this shirt?", "Can I wash this shirt?"]),
+      speaking("Я собираюсь встретиться с другом после работы", "I am going to meet a friend after work", ["I am going to meet a friend after work", "I am going to call my boss after lunch", "I am going to study at home this evening"])
+    ]
+  },
+  {
     title: "B1 Speaking Opinions",
     description: "Practice longer spoken answers about ideas, choices and daily opinions.",
     level: "B1",

@@ -30,14 +30,19 @@ export function AppShell() {
               </div>
             </div>
 
-            <div className="flex flex-wrap items-center gap-3">
-              <nav className="flex items-center gap-2 rounded-full p-1" data-surface="soft">
+            <div className="flex min-w-0 flex-col gap-3 sm:items-end">
+              <nav
+                className="flex w-full min-w-0 flex-nowrap items-center gap-2 overflow-x-auto rounded-full p-1 sm:w-auto"
+                data-surface="soft"
+              >
                 <NavLink
                   to="/"
                   end
                   className={({ isActive }) =>
-                    `rounded-full px-4 py-2 text-sm font-bold transition ${
-                      isActive ? "bg-white text-brand shadow dark:bg-slate-700" : "text-slate-500"
+                    `shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-bold transition ${
+                      isActive
+                        ? "bg-[var(--surface)] text-brand shadow"
+                        : "text-[var(--text-muted)] hover:text-[var(--text)]"
                     }`
                   }
                 >
@@ -46,23 +51,51 @@ export function AppShell() {
                 <NavLink
                   to="/leaderboard"
                   className={({ isActive }) =>
-                    `rounded-full px-4 py-2 text-sm font-bold transition ${
-                      isActive ? "bg-white text-brand shadow dark:bg-slate-700" : "text-slate-500"
+                    `shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-bold transition ${
+                      isActive
+                        ? "bg-[var(--surface)] text-brand shadow"
+                        : "text-[var(--text-muted)] hover:text-[var(--text)]"
                     }`
                   }
                 >
                   {t(language, "leaderboard")}
                 </NavLink>
+                <NavLink
+                  to="/theory"
+                  className={({ isActive }) =>
+                    `shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-bold transition ${
+                      isActive
+                        ? "bg-[var(--surface)] text-brand shadow"
+                        : "text-[var(--text-muted)] hover:text-[var(--text)]"
+                    }`
+                  }
+                >
+                  {t(language, "theory")}
+                </NavLink>
+                <NavLink
+                  to="/lexical"
+                  className={({ isActive }) =>
+                    `shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-bold transition ${
+                      isActive
+                        ? "bg-[var(--surface)] text-brand shadow"
+                        : "text-[var(--text-muted)] hover:text-[var(--text)]"
+                    }`
+                  }
+                >
+                  {t(language, "lexicalBlock")}
+                </NavLink>
               </nav>
-              <LanguageToggle />
-              <ThemeToggle />
-              <button
-                type="button"
-                onClick={logout}
-                className="rounded-full bg-danger px-4 py-2 text-sm font-extrabold text-white"
-              >
-                {t(language, "logout")}
-              </button>
+              <div className="flex flex-wrap items-center gap-3">
+                <LanguageToggle />
+                <ThemeToggle />
+                <button
+                  type="button"
+                  onClick={logout}
+                  className="rounded-full bg-danger px-4 py-2 text-sm font-extrabold text-white"
+                >
+                  {t(language, "logout")}
+                </button>
+              </div>
             </div>
           </div>
 

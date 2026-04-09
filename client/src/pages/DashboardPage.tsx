@@ -75,15 +75,15 @@ export function DashboardPage() {
 
           <div className="mt-6 grid gap-3 sm:grid-cols-3">
             <div className="rounded-3xl bg-white/15 p-4 backdrop-blur">
-              <div className="text-sm font-bold text-white/70">{t(language, "currentLevel")}</div>
+              <div className="text-sm font-bold text-white/90">{t(language, "currentLevel")}</div>
               <div className="mt-1 text-3xl font-black">{user.level}</div>
             </div>
             <div className="rounded-3xl bg-white/15 p-4 backdrop-blur">
-              <div className="text-sm font-bold text-white/70">XP</div>
+              <div className="text-sm font-bold text-white/90">XP</div>
               <div className="mt-1 text-3xl font-black">{user.xp}</div>
             </div>
             <div className="rounded-3xl bg-white/15 p-4 backdrop-blur">
-              <div className="text-sm font-bold text-white/70">{t(language, "streak")}</div>
+              <div className="text-sm font-bold text-white/90">{t(language, "streak")}</div>
               <div className="mt-1 text-3xl font-black">{user.streak} {language === "ru" ? "дн." : "days"}</div>
             </div>
           </div>
@@ -93,22 +93,26 @@ export function DashboardPage() {
               value={progressValue}
               label={t(language, "progressToXp", { xp: user.nextLevelXp })}
               colorClass="from-white to-emerald-200"
+              labelClassName="text-white/90"
+              trackClassName="bg-white/90"
             />
           </div>
         </div>
 
         <div className="grid gap-4">
           <div className="rounded-[28px] border border-white/40 bg-[var(--panel)] p-5 shadow-card">
-            <p className="text-sm font-black uppercase tracking-[0.22em] text-brand/70">{t(language, "today")}</p>
-            <h3 className="mt-2 text-2xl font-extrabold">{t(language, "dailyBoost")}</h3>
-            <p className="mt-2 text-sm text-slate-500 dark:text-slate-300">
+            <p className="text-sm font-black uppercase tracking-[0.24em] text-brand/70">{t(language, "today")}</p>
+            <h3 className="mt-2 text-2xl font-black leading-tight">{t(language, "dailyBoost")}</h3>
+            <p className="mt-2 text-base font-bold leading-8 text-slate-500 dark:text-slate-300">
               {t(language, "completeOne")}
             </p>
           </div>
           <div className="rounded-[28px] border border-white/40 bg-[var(--panel)] p-5 shadow-card">
-            <p className="text-sm font-black uppercase tracking-[0.22em] text-success/70">{t(language, "completed")}</p>
-            <div className="mt-2 text-3xl font-extrabold">{completedLessons}</div>
-            <p className="text-sm text-slate-500 dark:text-slate-300">{t(language, "lessonsFinished")}</p>
+            <p className="text-sm font-black uppercase tracking-[0.24em] text-success/70">{t(language, "completed")}</p>
+            <div className="mt-2 text-3xl font-black leading-none">{completedLessons}</div>
+            <p className="mt-2 text-base font-bold leading-8 text-slate-500 dark:text-slate-300">
+              {t(language, "lessonsFinished")}
+            </p>
           </div>
         </div>
       </section>
@@ -142,7 +146,7 @@ export function DashboardPage() {
         </div>
       </section>
 
-      <section className="grid gap-6 lg:grid-cols-[1.1fr,0.9fr]">
+      <section className="grid gap-6 lg:grid-cols-[1.1fr,0.9fr] lg:items-start">
         <div className="space-y-4">
           <div className="flex items-center justify-between">
             <div>
@@ -250,7 +254,7 @@ export function DashboardPage() {
           )}
         </div>
 
-        <div className="rounded-[32px] border border-white/40 bg-[var(--panel)] p-5 shadow-card">
+        <div className="self-start rounded-[32px] border border-white/40 bg-[var(--panel)] p-5 shadow-card">
           <p className="text-sm font-black uppercase tracking-[0.24em] text-brand/70">{t(language, "recentActivity")}</p>
           <h3 className="mt-2 text-2xl font-extrabold">{t(language, "lastWins")}</h3>
           <div className="mt-4 space-y-3">
