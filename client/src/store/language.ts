@@ -9,7 +9,7 @@ type LanguageState = {
 };
 
 const defaultLanguage =
-  (localStorage.getItem("easy-english-language") as Language | null) || "en";
+  (localStorage.getItem("easy-english-language") as Language | null) || "ru";
 
 export const useLanguageStore = create<LanguageState>((set) => ({
   language: defaultLanguage,

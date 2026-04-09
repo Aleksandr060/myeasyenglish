@@ -49,6 +49,7 @@ export function LessonPage() {
   const [randomizedOptions, setRandomizedOptions] = useState<Record<string, string[]>>({});
   const [speechStatus, setSpeechStatus] = useState<SpeechStatus>("idle");
   const [pronunciation, setPronunciation] = useState<PronunciationState | null>(null);
+  const speechTranscriptRef = useRef("");
   const recognitionRef = useRef<{
     start: () => void;
     stop: () => void;
@@ -76,6 +77,7 @@ export function LessonPage() {
 
     setPronunciation(null);
     setSpeechStatus("idle");
+    speechTranscriptRef.current = "";
     recognitionRef.current?.stop();
 
     setRandomizedOptions((current) => {
@@ -210,31 +212,57 @@ export function LessonPage() {
     recognition.interimResults = false;
     recognition.maxAlternatives = 1;
 
+    const applyRecognizedTranscript = (transcript: string) => {
+      const normalizedTranscript = transcript.trim();
+
+      if (!normalizedTranscript) {
+        setSpeechStatus("error");
+        return;
+      }
+
+      speechTranscriptRef.current = normalizedTranscript;
+      setCurrentValue(normalizedTranscript);
+      setSpeechStatus("idle");
+      setPronunciation(buildPronunciationState(normalizedTranscript));
+    };
+
     recognition.onstart = () => {
+      speechTranscriptRef.current = "";
       setSpeechStatus("listening");
       setPronunciation(null);
     };
 
     recognition.onerror = () => {
+      if (speechTranscriptRef.current) {
+        applyRecognizedTranscript(speechTranscriptRef.current);
+        return;
+      }
+
       setSpeechStatus("error");
       setPronunciation(null);
     };
 
     recognition.onend = () => {
+      if (speechTranscriptRef.current) {
+        applyRecognizedTranscript(speechTranscriptRef.current);
+        return;
+      }
+
       setSpeechStatus((current) => (current === "error" ? "error" : "idle"));
     };
 
     recognition.onresult = (event) => {
-      const transcript = event.results[0]?.[0]?.transcript?.trim() ?? "";
+      const transcript = Array.from(event.results)
+        .map((result) => result?.[0]?.transcript ?? "")
+        .join(" ")
+        .trim();
 
       if (!transcript) {
         setSpeechStatus("error");
         return;
       }
 
-      setCurrentValue(transcript);
-      setSpeechStatus("idle");
-      setPronunciation(buildPronunciationState(transcript));
+      applyRecognizedTranscript(transcript);
     };
 
     recognitionRef.current = recognition;
