@@ -103,8 +103,10 @@ export function AppShell() {
                 </NavLink>
               </nav>
               <div className="flex flex-wrap items-center justify-end gap-3">
-                <button
-                  type="button"
+                <a
+                  href="https://t.me/myeasyenglish23"
+                  target="_blank"
+                  rel="noreferrer"
                   aria-label="Telegram channel"
                   title="Telegram channel"
                   className="flex h-10 w-10 items-center justify-center rounded-full border border-sky-700/40 bg-sky-700 text-white shadow-card transition hover:scale-105 hover:bg-sky-600"
@@ -116,7 +118,7 @@ export function AppShell() {
                   >
                     <path d="M21.5 4.5 18.4 19c-.2 1-.8 1.3-1.6.8l-4.7-3.5-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.8 8.8-8c.4-.3-.1-.5-.5-.2L6.6 12.8 2 11.4c-1-.3-1-1 .2-1.4l17.8-6.8c.8-.3 1.6.2 1.5 1.3Z" />
                   </svg>
-                </button>
+                </a>
                 <LanguageToggle />
                 <ThemeToggle />
                 <button
