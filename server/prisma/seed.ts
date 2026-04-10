@@ -2,10 +2,12 @@ import dotenv from "dotenv";
 import bcrypt from "bcryptjs";
 import { PrismaClient, QuestionType, Level } from "@prisma/client";
 import { fileURLToPath } from "url";
+import path from "path";
 import { buildAdvancedLessons } from "./advancedLessons.js";
 import { buildEmotionLessons } from "./emotionLessons.js";
 import { buildIntermediateSpeakingLessons } from "./intermediateSpeakingLessons.js";
 import { buildIntonationLessons, type SeedLesson, type SeedQuestion } from "./intonationLessons.js";
+import { normalizeLessonMatrix } from "./normalizeLessonMatrix.js";
 
 dotenv.config({ path: fileURLToPath(new URL("../../.env", import.meta.url)) });
 
@@ -78,7 +80,7 @@ const fillBlank = (
   options: shuffle([correctWord, ...wrongOptions].slice(0, 3))
 });
 
-const lessons: SeedLesson[] = [
+const baseLessons: SeedLesson[] = [
   {
     title: "Greetings Spark",
     description: "Learn everyday greetings and polite phrases.",
@@ -427,7 +429,10 @@ const lessons: SeedLesson[] = [
   ...buildAdvancedLessons()
 ];
 
+export const buildLessonCatalog = () => normalizeLessonMatrix(baseLessons);
+
 async function main() {
+  const lessons = buildLessonCatalog();
   await prisma.userProgress.deleteMany();
   await prisma.question.deleteMany();
   await prisma.lesson.deleteMany();
@@ -470,11 +475,17 @@ async function main() {
   console.log(`Seeded ${lessons.length} lessons and a demo user.`);
 }
 
-main()
-  .catch((error) => {
-    console.error(error);
-    process.exit(1);
-  })
-  .finally(async () => {
-    await prisma.$disconnect();
-  });
+const isDirectRun = process.argv[1]
+  ? path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)
+  : false;
+
+if (isDirectRun) {
+  main()
+    .catch((error) => {
+      console.error(error);
+      process.exit(1);
+    })
+    .finally(async () => {
+      await prisma.$disconnect();
+    });
+}
