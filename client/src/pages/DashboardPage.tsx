@@ -62,27 +62,35 @@ export function DashboardPage() {
         .filter((group) => group.lessons.length > 0),
     [filteredLessons]
   );
-
   return (
     <div className="space-y-6">
       <section className="grid gap-4 lg:grid-cols-[1.2fr,0.8fr]">
-        <div className="rounded-[32px] bg-gradient-to-br from-brand via-indigo-500 to-success p-6 text-white shadow-card">
+        <div className="animate-pop-in relative overflow-hidden rounded-[32px] bg-gradient-to-br from-brand via-indigo-500 to-success p-6 text-white shadow-card">
+          <div className="decor-orb animate-float absolute -right-8 top-12 h-20 w-20 bg-white/20" />
           <p className="text-sm font-black uppercase tracking-[0.3em] text-white/70">{t(language, "dashboard")}</p>
           <h2 className="mt-3 text-3xl font-extrabold">{t(language, "dashboardHero")}</h2>
           <p className="mt-2 max-w-2xl text-white/85">
             {t(language, "dashboardSub", { level: user.level })}
           </p>
+          <div className="mt-5 flex flex-wrap gap-2">
+            <span className="edu-chip">🎯 focused practice</span>
+            <span className="edu-chip">🗣 confident speaking</span>
+            <span className="edu-chip">✨ steady growth</span>
+          </div>
 
           <div className="mt-6 grid gap-3 sm:grid-cols-3">
             <div className="rounded-3xl bg-white/15 p-4 backdrop-blur">
+              <div className="feature-dot">🏅</div>
               <div className="text-sm font-bold text-white/90">{t(language, "currentLevel")}</div>
               <div className="mt-1 text-3xl font-black">{user.level}</div>
             </div>
             <div className="rounded-3xl bg-white/15 p-4 backdrop-blur">
+              <div className="feature-dot">⭐</div>
               <div className="text-sm font-bold text-white/90">XP</div>
               <div className="mt-1 text-3xl font-black">{user.xp}</div>
             </div>
             <div className="rounded-3xl bg-white/15 p-4 backdrop-blur">
+              <div className="feature-dot">🔥</div>
               <div className="text-sm font-bold text-white/90">{t(language, "streak")}</div>
               <div className="mt-1 text-3xl font-black">{user.streak} {language === "ru" ? "дн." : "days"}</div>
             </div>
@@ -100,16 +108,16 @@ export function DashboardPage() {
         </div>
 
         <div className="grid gap-4">
-          <div className="rounded-[28px] border border-white/40 bg-[var(--panel)] p-5 shadow-card">
+          <div className="animate-slide-up rounded-[28px] border border-white/40 bg-[var(--panel)] p-5 shadow-card">
             <p className="text-sm font-black uppercase tracking-[0.24em] text-brand/70">{t(language, "today")}</p>
-            <h3 className="mt-2 text-2xl font-black leading-tight">{t(language, "dailyBoost")}</h3>
+            <h3 className="mt-2 text-2xl font-black leading-tight">☀️ {t(language, "dailyBoost")}</h3>
             <p className="mt-2 text-base font-bold leading-8 text-slate-500 dark:text-slate-300">
               {t(language, "completeOne")}
             </p>
           </div>
-          <div className="rounded-[28px] border border-white/40 bg-[var(--panel)] p-5 shadow-card">
+          <div className="animate-slide-up rounded-[28px] border border-white/40 bg-[var(--panel)] p-5 shadow-card">
             <p className="text-sm font-black uppercase tracking-[0.24em] text-success/70">{t(language, "completed")}</p>
-            <div className="mt-2 text-3xl font-black leading-none">{completedLessons}</div>
+            <div className="mt-2 text-3xl font-black leading-none">🎉 {completedLessons}</div>
             <p className="mt-2 text-base font-bold leading-8 text-slate-500 dark:text-slate-300">
               {t(language, "lessonsFinished")}
             </p>
@@ -118,7 +126,7 @@ export function DashboardPage() {
       </section>
 
       <section
-        className="rounded-[32px] border p-6 shadow-card"
+        className="animate-slide-up rounded-[32px] border p-6 shadow-card"
         data-surface="base"
       >
         <div className="grid gap-5 lg:grid-cols-[1.15fr,0.85fr] lg:items-center">
@@ -126,7 +134,7 @@ export function DashboardPage() {
             <p className="text-sm font-black uppercase tracking-[0.24em] text-brand/70">
               {t(language, "intonationLabel")}
             </p>
-            <h3 className="mt-2 text-2xl font-extrabold">{t(language, "intonationTitle")}</h3>
+            <h3 className="mt-2 text-2xl font-extrabold">🎼 {t(language, "intonationTitle")}</h3>
             <p className="mt-3 max-w-3xl text-sm leading-7" data-text="muted">
               {t(language, "intonationBody")}
             </p>
@@ -134,13 +142,13 @@ export function DashboardPage() {
 
           <div className="grid gap-3">
             <div className="rounded-3xl border p-4" data-surface="soft">
-              <p className="text-sm font-bold">{t(language, "intonationTipOne")}</p>
+              <p className="text-sm font-bold">🫧 {t(language, "intonationTipOne")}</p>
             </div>
             <div className="rounded-3xl border p-4" data-surface="soft">
-              <p className="text-sm font-bold">{t(language, "intonationTipTwo")}</p>
+              <p className="text-sm font-bold">🎤 {t(language, "intonationTipTwo")}</p>
             </div>
             <div className="rounded-3xl border p-4" data-surface="soft">
-              <p className="text-sm font-bold">{t(language, "intonationTipThree")}</p>
+              <p className="text-sm font-bold">🌊 {t(language, "intonationTipThree")}</p>
             </div>
           </div>
         </div>
@@ -151,10 +159,10 @@ export function DashboardPage() {
           <div className="flex items-center justify-between">
             <div>
               <p className="text-sm font-black uppercase tracking-[0.24em] text-brand/70">{t(language, "lessons")}</p>
-              <h3 className="text-2xl font-extrabold">{t(language, "availableAdventures")}</h3>
+              <h3 className="text-2xl font-extrabold">🧭 {t(language, "availableAdventures")}</h3>
             </div>
             <span className="rounded-full bg-slate-100 px-3 py-2 text-sm font-bold text-slate-500 dark:bg-slate-800 dark:text-slate-200">
-              {filteredLessons.length} {t(language, "total")}
+              ✨ {filteredLessons.length} {t(language, "total")}
             </span>
           </div>
 
@@ -238,7 +246,7 @@ export function DashboardPage() {
               {groupedLessons.map((group) => (
                 <section key={group.level} className="space-y-3">
                   <div className="flex items-center justify-between">
-                    <div className="text-lg font-extrabold">{group.level}</div>
+                    <div className="text-lg font-extrabold">📍 {group.level}</div>
                     <div className="rounded-full px-3 py-1 text-xs font-black uppercase tracking-[0.16em]" data-surface="soft">
                       {group.lessons.length} {t(language, "total")}
                     </div>
@@ -254,9 +262,9 @@ export function DashboardPage() {
           )}
         </div>
 
-        <div className="self-start rounded-[32px] border border-white/40 bg-[var(--panel)] p-5 shadow-card">
+        <div className="animate-slide-up self-start rounded-[32px] border border-white/40 bg-[var(--panel)] p-5 shadow-card">
           <p className="text-sm font-black uppercase tracking-[0.24em] text-brand/70">{t(language, "recentActivity")}</p>
-          <h3 className="mt-2 text-2xl font-extrabold">{t(language, "lastWins")}</h3>
+          <h3 className="mt-2 text-2xl font-extrabold">🌟 {t(language, "lastWins")}</h3>
           <div className="mt-4 space-y-3">
             {user.recentActivity.length ? (
               user.recentActivity.map((item) => (
@@ -272,7 +280,7 @@ export function DashboardPage() {
                     </div>
                   </div>
                   <div className="rounded-full bg-success/10 px-3 py-1 text-sm font-extrabold text-success">
-                    +{item.xpEarned} XP
+                    +{item.xpEarned} XP ⭐
                   </div>
                 </div>
               ))

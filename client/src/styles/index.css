@@ -42,6 +42,32 @@ body {
   color: var(--text);
 }
 
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  z-index: -1;
+  pointer-events: none;
+  border-radius: 9999px;
+  opacity: 0.2;
+}
+
+body::before {
+  top: 96px;
+  left: -40px;
+  width: 120px;
+  height: 240px;
+  background: linear-gradient(180deg, rgba(79, 70, 229, 0.72), rgba(16, 185, 129, 0.7));
+}
+
+body::after {
+  right: 4%;
+  bottom: 5%;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, rgba(34, 211, 238, 0.34), rgba(79, 70, 229, 0.08) 68%, transparent 72%);
+}
+
 * {
   box-sizing: border-box;
 }
@@ -97,6 +123,119 @@ input::placeholder {
   color: var(--text-muted);
 }
 
+.animate-float {
+  animation: floatY 9s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: floatY 11s ease-in-out infinite;
+  animation-delay: 1.5s;
+}
+
+.animate-pop-in {
+  animation: popIn 0.55s ease-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.5s ease-out;
+}
+
+.decor-orb {
+  position: absolute;
+  border-radius: 9999px;
+  pointer-events: none;
+  opacity: 0.45;
+}
+
+.edu-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  padding: 0.45rem 0.85rem;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.auth-grid {
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-grid::before {
+  content: "";
+  position: absolute;
+  inset: auto -40px -60px auto;
+  width: 180px;
+  height: 180px;
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.34), rgba(255, 255, 255, 0) 68%);
+}
+
+.feature-dot {
+  display: inline-flex;
+  height: 2rem;
+  width: 2rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.lesson-card-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.lesson-card-glow::after {
+  content: "";
+  position: absolute;
+  inset: auto -30px -46px auto;
+  width: 84px;
+  height: 84px;
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgba(79, 70, 229, 0.08), transparent 68%);
+  pointer-events: none;
+}
+
+@keyframes floatY {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.96) translateY(8px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 :root[data-theme="light"] input:-webkit-autofill,
 :root[data-theme="light"] input:-webkit-autofill:hover,
 :root[data-theme="light"] input:-webkit-autofill:focus,
@@ -105,4 +244,13 @@ input::placeholder {
   -webkit-box-shadow: 0 0 0 1000px #ffffff inset;
   box-shadow: 0 0 0 1000px #ffffff inset;
   transition: background-color 9999s ease-in-out 0s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float,
+  .animate-float-delayed,
+  .animate-pop-in,
+  .animate-slide-up {
+    animation: none;
+  }
 }

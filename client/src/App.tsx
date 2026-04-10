@@ -10,6 +10,7 @@ import { LeaderboardPage } from "./pages/LeaderboardPage";
 import { LessonPage } from "./pages/LessonPage";
 import { LexicalPage } from "./pages/LexicalPage";
 import { LoginPage } from "./pages/LoginPage";
+import { PracticePage } from "./pages/PracticePage";
 import { RegisterPage } from "./pages/RegisterPage";
 import { TheoryPage } from "./pages/TheoryPage";
 
@@ -66,6 +67,7 @@ export default function App() {
         <Route index element={<DashboardPage />} />
         <Route path="lesson/:lessonId" element={<LessonPage />} />
         <Route path="leaderboard" element={<LeaderboardPage />} />
+        <Route path="practice" element={<PracticePage />} />
         <Route path="theory" element={<TheoryPage />} />
         <Route path="lexical" element={<LexicalPage />} />
       </Route>

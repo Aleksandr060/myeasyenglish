@@ -7,13 +7,15 @@ import { ThemeToggle } from "../components/ThemeToggle";
 import { t } from "../lib/i18n";
 import { useAuthStore } from "../store/auth";
 import { useLanguageStore } from "../store/language";
+import { useThemeStore } from "../store/theme";
 
 export function LoginPage() {
   const navigate = useNavigate();
   const location = useLocation();
   const setAuth = useAuthStore((state) => state.setAuth);
   const language = useLanguageStore((state) => state.language);
-  const [form, setForm] = useState({ email: "demo@easyenglish.dev", password: "demo1234" });
+  const theme = useThemeStore((state) => state.theme);
+  const [form, setForm] = useState({ email: "", password: "" });
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -54,8 +56,10 @@ export function LoginPage() {
           <ThemeToggle />
         </div>
       </div>
-      <div className="grid w-full max-w-5xl gap-6 lg:grid-cols-[1.1fr,0.9fr]">
-        <section className="rounded-[36px] bg-gradient-to-br from-brand via-indigo-500 to-success p-8 text-white shadow-card">
+      <div className="w-full max-w-5xl">
+        <div className="auth-grid grid gap-6 lg:grid-cols-[1.1fr,0.9fr]">
+        <section className="animate-pop-in relative overflow-hidden rounded-[36px] bg-gradient-to-br from-brand via-indigo-500 to-success p-8 text-white shadow-card">
+          <div className="decor-orb animate-float absolute -right-6 top-10 h-20 w-20 bg-white/20" />
           <p className="text-sm font-black uppercase tracking-[0.3em] text-white/70">My Easy English</p>
           <h1 className="mt-4 text-4xl font-extrabold leading-tight">
             {t(language, "heroTitle")}
@@ -63,27 +67,32 @@ export function LoginPage() {
           <p className="mt-4 max-w-xl text-base text-white/85">
             {t(language, "heroSub")}
           </p>
+          <div className="mt-5 flex flex-wrap gap-2">
+            <span className="edu-chip">📚 smart lessons</span>
+            <span className="edu-chip">🗣 voice practice</span>
+            <span className="edu-chip">🌍 English journey</span>
+          </div>
           <div className="mt-8 grid gap-3 sm:grid-cols-3">
-            <div className="rounded-3xl bg-white/15 p-4 backdrop-blur">
-              <div className="text-2xl font-black">15</div>
+            <div className="rounded-3xl bg-white/15 p-4">
+              <div className="feature-dot">📘</div>
+              <div className="mt-3 text-2xl font-black">15</div>
               <div className="text-sm text-white/80">{t(language, "seededLessons")}</div>
             </div>
-            <div className="rounded-3xl bg-white/15 p-4 backdrop-blur">
-              <div className="text-2xl font-black">4</div>
+            <div className="rounded-3xl bg-white/15 p-4">
+              <div className="feature-dot">🎧</div>
+              <div className="mt-3 text-2xl font-black">4</div>
               <div className="text-sm text-white/80">{t(language, "exerciseModes")}</div>
             </div>
-            <div className="rounded-3xl bg-white/15 p-4 backdrop-blur">
-              <div className="text-2xl font-black">3</div>
+            <div className="rounded-3xl bg-white/15 p-4">
+              <div className="feature-dot">🔥</div>
+              <div className="mt-3 text-2xl font-black">3</div>
               <div className="text-sm text-white/80">{t(language, "sessionHearts")}</div>
             </div>
           </div>
         </section>
 
-        <section className="rounded-[36px] border border-white/40 bg-[var(--panel)] p-6 shadow-card">
+        <section className="animate-slide-up rounded-[36px] border border-white/40 bg-[var(--panel)] p-6 shadow-card">
           <h2 className="text-3xl font-extrabold">{t(language, "welcomeBack")}</h2>
-          <p className="mt-2 text-sm text-slate-500 dark:text-slate-300">
-            {t(language, "useDemo")}
-          </p>
 
           <form className="mt-6 space-y-4" onSubmit={handleSubmit}>
             <label className="block">
@@ -120,13 +129,21 @@ export function LoginPage() {
             </button>
           </form>
 
-          <p className="mt-4 text-sm text-slate-500 dark:text-slate-300">
+          <p
+            className="mt-4 text-sm"
+            style={{ color: theme === "dark" ? "#cbd5e1" : "#000000" }}
+          >
             {t(language, "newHere")}{" "}
             <Link className="font-extrabold text-brand" to="/register">
               {t(language, "createAccount")}
             </Link>
           </p>
         </section>
+        </div>
+
+        <footer className="pt-6 text-center text-xs font-bold tracking-[0.16em] text-slate-500 dark:text-slate-400">
+          Powered by Kutuzov Aleksandr
+        </footer>
       </div>
     </div>
   );

@@ -534,6 +534,242 @@ export const buildAdvancedLessons = (): SeedLesson[] => [
     ]
   },
   {
+    title: "C1 Speaking Debate Room",
+    description: "Practice nuanced disagreement, rebuttal and structured spoken reasoning.",
+    level: "C1",
+    type: "speaking",
+    xpReward: 170,
+    questions: [
+      speaking("Я бы оспорил это предположение.", "I would challenge that assumption.", [
+        "I would challenge that assumption.",
+        "I would summarize that section.",
+        "I would postpone that decision."
+      ]),
+      speaking("Ваш тезис интересен, но логически уязвим.", "Your thesis is interesting, but logically vulnerable.", [
+        "Your thesis is interesting, but logically vulnerable.",
+        "Your comment is helpful, but emotionally intense.",
+        "Your example is clear, but slightly repetitive."
+      ]),
+      speaking("Позвольте предложить альтернативную интерпретацию.", "Let me offer an alternative interpretation.", [
+        "Let me offer an alternative interpretation.",
+        "Let me repeat the earlier explanation.",
+        "Let me describe the visual impression."
+      ]),
+      speaking("Это утверждение не вполне подтверждается фактами.", "That claim is not fully supported by the facts.", [
+        "That claim is not fully supported by the facts.",
+        "That sentence is not clearly heard by the class.",
+        "That answer is not especially hard to remember."
+      ]),
+      speaking("Мы смешиваем причину и следствие.", "We are confusing cause and effect.", [
+        "We are confusing cause and effect.",
+        "We are combining tone and grammar.",
+        "We are repeating points and phrases."
+      ]),
+      speaking("Я не думаю, что этот вывод неизбежен.", "I do not think that conclusion is inevitable.", [
+        "I do not think that conclusion is inevitable.",
+        "I do not think that answer is memorable.",
+        "I do not think that speaker is nervous."
+      ]),
+      speaking("Стоит различать мнение и доказательство.", "It is worth distinguishing between opinion and evidence.", [
+        "It is worth distinguishing between opinion and evidence.",
+        "It is worth comparing the first and last tasks.",
+        "It is worth repeating the phrase more slowly."
+      ]),
+      speaking("Этот аргумент звучит убедительно лишь на первый взгляд.", "That argument sounds convincing only at first glance.", [
+        "That argument sounds convincing only at first glance.",
+        "That explanation sounds detailed only in writing.",
+        "That expression sounds natural only in context."
+      ]),
+      speaking("Нам нужно точнее определить рамки обсуждения.", "We need to define the scope of the discussion more precisely.", [
+        "We need to define the scope of the discussion more precisely.",
+        "We need to describe the mood of the speaker more clearly.",
+        "We need to divide the lesson into shorter sections."
+      ]),
+      speaking("Я согласен с принципом, но не с реализацией.", "I agree with the principle, but not with the implementation.", [
+        "I agree with the principle, but not with the implementation.",
+        "I agree with the answer, but not with the accent.",
+        "I agree with the topic, but not with the title."
+      ])
+    ]
+  },
+  {
+    title: "C1 Speaking Strategic Tone",
+    description: "Control tone, register and precision in sensitive spoken interactions.",
+    level: "C1",
+    type: "speaking",
+    xpReward: 170,
+    questions: [
+      speaking("Важно выразить несогласие без излишней резкости.", "It is important to express disagreement without unnecessary harshness.", [
+        "It is important to express disagreement without unnecessary harshness.",
+        "It is important to describe the process without extra detail.",
+        "It is important to complete the exercise without much delay."
+      ]),
+      speaking("Я постараюсь сформулировать это более дипломатично.", "I will try to phrase that more diplomatically.", [
+        "I will try to phrase that more diplomatically.",
+        "I will try to explain that more enthusiastically.",
+        "I will try to memorize that more accurately."
+      ]),
+      speaking("Такой тон может быть воспринят как снисходительный.", "That tone may be perceived as condescending.", [
+        "That tone may be perceived as condescending.",
+        "That style may be described as traditional.",
+        "That sentence may be remembered as unusual."
+      ]),
+      speaking("Нам следует смягчить формулировку.", "We should soften the wording.", [
+        "We should soften the wording.",
+        "We should shorten the answer.",
+        "We should brighten the design."
+      ]),
+      speaking("Я не хотел бы звучать категорично.", "I would not like to sound overly categorical.", [
+        "I would not like to sound overly categorical.",
+        "I would not like to sound too academic.",
+        "I would not like to sound completely unfamiliar."
+      ]),
+      speaking("Контекст требует более осторожного языка.", "The context calls for more careful language.", [
+        "The context calls for more careful language.",
+        "The audience asks for more direct answers.",
+        "The exercise needs more flexible timing."
+      ]),
+      speaking("Это замечание уместно, но не в такой форме.", "That point is valid, but not in that form.", [
+        "That point is valid, but not in that form.",
+        "That task is useful, but not at this level.",
+        "That phrase is clear, but not very common."
+      ]),
+      speaking("Лучше оставить пространство для интерпретации.", "It is better to leave room for interpretation.", [
+        "It is better to leave room for interpretation.",
+        "It is better to use more energy in speaking.",
+        "It is better to choose shorter sentences in class."
+      ]),
+      speaking("Такая подача может ослабить доверие аудитории.", "That delivery may weaken the audience's trust.", [
+        "That delivery may weaken the audience's trust.",
+        "That example may improve the listener's focus.",
+        "That response may change the student's pace."
+      ]),
+      speaking("Я бы сделал акцент на ясности, а не на эффектности.", "I would emphasize clarity rather than impact.", [
+        "I would emphasize clarity rather than impact.",
+        "I would emphasize grammar rather than fluency.",
+        "I would emphasize speed rather than tone."
+      ])
+    ]
+  },
+  {
+    title: "C1 Speaking Mediation Lab",
+    description: "Rephrase, mediate and balance viewpoints in advanced conversation.",
+    level: "C1",
+    type: "speaking",
+    xpReward: 170,
+    questions: [
+      speaking("Позвольте мне переформулировать вашу мысль.", "Let me rephrase your point.", [
+        "Let me rephrase your point.",
+        "Let me reduce your argument.",
+        "Let me repeat your example."
+      ]),
+      speaking("Если я правильно понял, вы имеете в виду следующее.", "If I understood correctly, you mean the following.", [
+        "If I understood correctly, you mean the following.",
+        "If I remember correctly, you wrote the summary.",
+        "If I explained correctly, you solved the issue."
+      ]),
+      speaking("Обе позиции содержат рациональное зерно.", "Both positions contain a rational core.", [
+        "Both positions contain a rational core.",
+        "Both lessons include a speaking task.",
+        "Both answers follow a similar pattern."
+      ]),
+      speaking("Нам нужно найти формулировку, приемлемую для всех.", "We need to find wording that is acceptable to everyone.", [
+        "We need to find wording that is acceptable to everyone.",
+        "We need to choose a phrase that is easier to memorize.",
+        "We need to build a lesson that is shorter than usual."
+      ]),
+      speaking("Я вижу здесь скорее недопонимание, чем конфликт.", "I see more misunderstanding here than conflict.", [
+        "I see more misunderstanding here than conflict.",
+        "I see more emotion here than structure.",
+        "I see more grammar here than vocabulary."
+      ]),
+      speaking("Стоит отделить факты от эмоциональной реакции.", "It is worth separating the facts from the emotional response.", [
+        "It is worth separating the facts from the emotional response.",
+        "It is worth comparing the answers with the examples.",
+        "It is worth revising the phrases after the lesson."
+      ]),
+      speaking("Давайте сосредоточимся на том, в чём мы согласны.", "Let us focus on what we agree on.", [
+        "Let us focus on what we agree on.",
+        "Let us return to what we translated first.",
+        "Let us decide which sentence sounds better."
+      ]),
+      speaking("Я постараюсь передать вашу мысль более нейтрально.", "I will try to convey your idea in a more neutral way.", [
+        "I will try to convey your idea in a more neutral way.",
+        "I will try to explain your answer in a faster way.",
+        "I will try to present your feedback in a shorter way."
+      ]),
+      speaking("Нам нужен язык, который не обостряет ситуацию.", "We need language that does not escalate the situation.", [
+        "We need language that does not escalate the situation.",
+        "We need intonation that does not slow down the speech.",
+        "We need grammar that does not confuse the learner."
+      ]),
+      speaking("Смысл можно сохранить, даже изменив тон.", "The meaning can be preserved even if the tone changes.", [
+        "The meaning can be preserved even if the tone changes.",
+        "The structure can be improved even if the task grows.",
+        "The answer can be repeated even if the sound fails."
+      ])
+    ]
+  },
+  {
+    title: "C1 Speaking Professional Framing",
+    description: "Frame recommendations, criticism and decisions with advanced clarity.",
+    level: "C1",
+    type: "speaking",
+    xpReward: 170,
+    questions: [
+      speaking("Я бы представил это как долгосрочную инвестицию.", "I would frame this as a long-term investment.", [
+        "I would frame this as a long-term investment.",
+        "I would describe this as a short classroom task.",
+        "I would repeat this as a familiar speaking line."
+      ]),
+      speaking("Нам следует подчеркнуть потенциальную выгоду.", "We should highlight the potential benefit.", [
+        "We should highlight the potential benefit.",
+        "We should memorize the optional phrase.",
+        "We should simplify the opening sentence."
+      ]),
+      speaking("Критика будет воспринята лучше в конструктивной форме.", "Criticism will be received better in a constructive form.", [
+        "Criticism will be received better in a constructive form.",
+        "Feedback will be repeated better in a louder voice.",
+        "Grammar will be remembered better in a shorter list."
+      ]),
+      speaking("Я бы избегал слишком категоричных формулировок.", "I would avoid overly categorical wording.", [
+        "I would avoid overly categorical wording.",
+        "I would avoid unusually difficult grammar.",
+        "I would avoid very energetic delivery."
+      ]),
+      speaking("Это решение нужно представить как обоснованный выбор.", "This decision should be presented as a reasoned choice.", [
+        "This decision should be presented as a reasoned choice.",
+        "This answer should be described as a simple mistake.",
+        "This exercise should be translated as a daily phrase."
+      ]),
+      speaking("Нам стоит заранее обозначить ограничения.", "We should outline the limitations in advance.", [
+        "We should outline the limitations in advance.",
+        "We should analyze the emotions in detail.",
+        "We should compare the examples again."
+      ]),
+      speaking("Я бы начал с общего вывода, а затем перешёл к деталям.", "I would start with the overall conclusion and then move to the details.", [
+        "I would start with the overall conclusion and then move to the details.",
+        "I would start with the shortest sentence and then add examples.",
+        "I would start with the translation and then repeat the question."
+      ]),
+      speaking("Важно показать, что выбор был осознанным.", "It is important to show that the choice was deliberate.", [
+        "It is important to show that the choice was deliberate.",
+        "It is important to hear that the answer was correct.",
+        "It is important to know that the speaker was nervous."
+      ]),
+      speaking("Такое объяснение помогает снизить сопротивление.", "That explanation helps reduce resistance.", [
+        "That explanation helps reduce resistance.",
+        "That intonation helps improve pronunciation.",
+        "That structure helps organize revision."
+      ]),
+      speaking("Нам нужен более убедительный способ подать идею.", "We need a more persuasive way to present the idea.", [
+        "We need a more persuasive way to present the idea.",
+        "We need a more traditional way to teach the phrase.",
+        "We need a more relaxed way to read the text."
+      ])
+    ]
+  },
+  {
     title: "C2 Speaking Precision Lab",
     description: "Train high-level fluency, subtext and exact spoken delivery.",
     level: "C2",
@@ -589,6 +825,242 @@ export const buildAdvancedLessons = (): SeedLesson[] => [
         "An advanced speaker can criticize without sounding abrasive.",
         "An advanced writer can simplify without losing detail.",
         "An advanced learner can summarize without preparation."
+      ])
+    ]
+  },
+  {
+    title: "C2 Speaking Subtext Control",
+    description: "Work with implication, understatement and subtle shades of meaning.",
+    level: "C2",
+    type: "speaking",
+    xpReward: 190,
+    questions: [
+      speaking("Её слова звучали одобрительно, но подтекст был холодным.", "Her words sounded approving, but the subtext was cold.", [
+        "Her words sounded approving, but the subtext was cold.",
+        "Her answer sounded formal, but the grammar was clear.",
+        "Her tone sounded softer, but the message was shorter."
+      ]),
+      speaking("Он согласился слишком быстро, чтобы это казалось искренним.", "He agreed too quickly for it to seem sincere.", [
+        "He agreed too quickly for it to seem sincere.",
+        "He replied too calmly for it to feel urgent.",
+        "He paused too long for it to sound natural."
+      ]),
+      speaking("Молчание оказалось красноречивее любого ответа.", "The silence proved more eloquent than any answer.", [
+        "The silence proved more eloquent than any answer.",
+        "The example sounded more useful than the theory.",
+        "The lesson felt more difficult than the review."
+      ]),
+      speaking("Это замечание выглядело нейтральным лишь формально.", "That remark was neutral only on the surface.", [
+        "That remark was neutral only on the surface.",
+        "That response was helpful only at first.",
+        "That phrase was natural only in writing."
+      ]),
+      speaking("За вежливостью скрывалось явное раздражение.", "Obvious irritation lay beneath the politeness.", [
+        "Obvious irritation lay beneath the politeness.",
+        "Strong confidence appeared during the speech.",
+        "Clear structure emerged from the answer."
+      ]),
+      speaking("Он намеренно оставил фразу двусмысленной.", "He deliberately left the sentence ambiguous.", [
+        "He deliberately left the sentence ambiguous.",
+        "He accidentally made the question shorter.",
+        "He carefully changed the order of ideas."
+      ]),
+      speaking("Подобная ирония требует очень точного слуха.", "That kind of irony requires a very precise ear.", [
+        "That kind of irony requires a very precise ear.",
+        "That type of speaking needs a slower rhythm.",
+        "That kind of grammar takes a longer explanation."
+      ]),
+      speaking("Формально это был комплимент, но по сути упрёк.", "Formally it was a compliment, but in essence a reproach.", [
+        "Formally it was a compliment, but in essence a reproach.",
+        "Technically it was a question, but in style a summary.",
+        "Visually it was a chart, but in purpose a reminder."
+      ]),
+      speaking("Тон менял смысл сильнее, чем сами слова.", "The tone altered the meaning more than the words themselves.", [
+        "The tone altered the meaning more than the words themselves.",
+        "The speed improved the answer more than the examples.",
+        "The accent changed the task more than the grammar."
+      ]),
+      speaking("Важно уловить не только сказанное, но и подразумеваемое.", "It is important to grasp not only what is said but also what is implied.", [
+        "It is important to grasp not only what is said but also what is implied.",
+        "It is important to learn not only the rules but also the exceptions.",
+        "It is important to repeat not only the phrase but also the translation."
+      ])
+    ]
+  },
+  {
+    title: "C2 Speaking Rhetorical Nuance",
+    description: "Sharpen persuasive speech, rhetorical contrast and elegant emphasis.",
+    level: "C2",
+    type: "speaking",
+    xpReward: 190,
+    questions: [
+      speaking("Сила аргумента заключалась в его сдержанности.", "The strength of the argument lay in its restraint.", [
+        "The strength of the argument lay in its restraint.",
+        "The value of the lesson lay in its simplicity.",
+        "The rhythm of the speech lay in its repetition."
+      ]),
+      speaking("Он усилил эффект, ничего не сказав напрямую.", "He intensified the effect without saying anything directly.", [
+        "He intensified the effect without saying anything directly.",
+        "He improved the answer without changing the grammar.",
+        "He shortened the lesson without removing the tasks."
+      ]),
+      speaking("Такой контраст делает мысль особенно выразительной.", "That contrast makes the idea especially vivid.", [
+        "That contrast makes the idea especially vivid.",
+        "That topic makes the exercise especially useful.",
+        "That accent makes the sentence especially clear."
+      ]),
+      speaking("Её речь была изысканной, но не вычурной.", "Her speech was refined without being pretentious.", [
+        "Her speech was refined without being pretentious.",
+        "Her answer was careful without being formal.",
+        "Her tone was soft without being uncertain."
+      ]),
+      speaking("Убедительность здесь строится на точной дозировке эмоций.", "Persuasiveness here depends on a precise balance of emotion.", [
+        "Persuasiveness here depends on a precise balance of emotion.",
+        "Confidence here depends on a strong memory of phrases.",
+        "Fluency here depends on a quick pace of speaking."
+      ]),
+      speaking("Риторический вопрос прозвучал скорее как обвинение.", "The rhetorical question sounded more like an accusation.", [
+        "The rhetorical question sounded more like an accusation.",
+        "The opening sentence sounded more like a summary.",
+        "The final answer sounded more like a translation."
+      ]),
+      speaking("Лаконичность придала высказыванию дополнительный вес.", "Brevity gave the statement additional weight.", [
+        "Brevity gave the statement additional weight.",
+        "Clarity gave the lesson additional value.",
+        "Practice gave the learner additional confidence."
+      ]),
+      speaking("Эта метафора работает именно из-за своей тонкости.", "That metaphor works precisely because of its subtlety.", [
+        "That metaphor works precisely because of its subtlety.",
+        "That example works mainly because of its structure.",
+        "That sentence works partly because of its rhythm."
+      ]),
+      speaking("Избыточная драматизация разрушила бы эффект.", "Excessive dramatization would have ruined the effect.", [
+        "Excessive dramatization would have ruined the effect.",
+        "Unusual pronunciation would have changed the answer.",
+        "Longer instructions would have slowed the lesson."
+      ]),
+      speaking("В этом случае нам важнее намёк, чем прямое утверждение.", "In this case, suggestion matters more than direct assertion.", [
+        "In this case, suggestion matters more than direct assertion.",
+        "In this case, grammar matters more than pronunciation.",
+        "In this case, translation matters more than listening."
+      ])
+    ]
+  },
+  {
+    title: "C2 Speaking Interpretive Response",
+    description: "Respond to ambiguity, layered intent and complex communicative signals.",
+    level: "C2",
+    type: "speaking",
+    xpReward: 190,
+    questions: [
+      speaking("Я бы прочитал это как завуалированное предупреждение.", "I would read that as a veiled warning.", [
+        "I would read that as a veiled warning.",
+        "I would describe that as a helpful note.",
+        "I would repeat that as a clear instruction."
+      ]),
+      speaking("Его осторожность, вероятно, была стратегической.", "His caution was probably strategic.", [
+        "His caution was probably strategic.",
+        "His answer was probably incomplete.",
+        "His accent was probably regional."
+      ]),
+      speaking("Буквальный смысл здесь вводит в заблуждение.", "The literal meaning is misleading here.", [
+        "The literal meaning is misleading here.",
+        "The final example is confusing here.",
+        "The slower version is easier here."
+      ]),
+      speaking("Мне кажется, это скорее попытка дистанцироваться.", "It seems to me more like an attempt to distance himself.", [
+        "It seems to me more like an attempt to distance himself.",
+        "It seems to me more like a chance to explain the rule.",
+        "It seems to me more like a reason to repeat the answer."
+      ]),
+      speaking("Подобная сдержанность может скрывать несогласие.", "Such restraint may conceal disagreement.", [
+        "Such restraint may conceal disagreement.",
+        "Such grammar may create confusion.",
+        "Such feedback may sound repetitive."
+      ]),
+      speaking("Её ответ оставил пространство для двоякого толкования.", "Her reply left room for two interpretations.", [
+        "Her reply left room for two interpretations.",
+        "Her example left room for more revision.",
+        "Her lecture left room for fewer questions."
+      ]),
+      speaking("Контекст подсказывает более сложное чтение ситуации.", "The context suggests a more layered reading of the situation.", [
+        "The context suggests a more layered reading of the situation.",
+        "The exercise suggests a more careful pace of speaking.",
+        "The task suggests a more direct style of writing."
+      ]),
+      speaking("Нам следует учитывать скрытый коммуникативный сигнал.", "We should take the implicit communicative signal into account.", [
+        "We should take the implicit communicative signal into account.",
+        "We should keep the original sentence in mind.",
+        "We should put the difficult phrase on screen."
+      ]),
+      speaking("Я не уверен, что его нейтралитет был подлинным.", "I am not convinced that his neutrality was genuine.", [
+        "I am not convinced that his neutrality was genuine.",
+        "I am not convinced that his answer was wrong.",
+        "I am not convinced that his accent was natural."
+      ]),
+      speaking("Такие детали радикально меняют интерпретацию.", "Such details radically change the interpretation.", [
+        "Such details radically change the interpretation.",
+        "Such questions gradually improve pronunciation.",
+        "Such answers occasionally reduce confusion."
+      ])
+    ]
+  },
+  {
+    title: "C2 Speaking Register Mastery",
+    description: "Master register shifts, precision and high-level spoken control.",
+    level: "C2",
+    type: "speaking",
+    xpReward: 190,
+    questions: [
+      speaking("Смена регистра здесь была намеренной и очень точной.", "The shift in register here was deliberate and highly precise.", [
+        "The shift in register here was deliberate and highly precise.",
+        "The change in rhythm here was simple and quite natural.",
+        "The use of grammar here was careful and rather formal."
+      ]),
+      speaking("Он сознательно выбрал более официальный тон.", "He deliberately adopted a more formal tone.", [
+        "He deliberately adopted a more formal tone.",
+        "He unexpectedly repeated a more familiar phrase.",
+        "He gradually developed a more confident style."
+      ]),
+      speaking("Такое слово уместно лишь в узком контексте.", "That word is appropriate only in a narrow context.", [
+        "That word is appropriate only in a narrow context.",
+        "That answer is acceptable only in the review.",
+        "That phrase is memorable only in the textbook."
+      ]),
+      speaking("Высокий уровень требует контроля над каждым оттенком смысла.", "A high level requires control over every shade of meaning.", [
+        "A high level requires control over every shade of meaning.",
+        "A difficult task requires attention to every word on screen.",
+        "A good answer requires practice with every type of question."
+      ]),
+      speaking("Неподходящий регистр может подорвать доверие мгновенно.", "An inappropriate register can undermine trust instantly.", [
+        "An inappropriate register can undermine trust instantly.",
+        "An unusual structure can improve rhythm unexpectedly.",
+        "An extended pause can change timing completely."
+      ]),
+      speaking("Здесь точность важнее стилистического блеска.", "Precision matters more here than stylistic flair.", [
+        "Precision matters more here than stylistic flair.",
+        "Pronunciation matters more here than vocabulary range.",
+        "Speed matters more here than careful listening."
+      ]),
+      speaking("Даже сильный аргумент ослабевает при неудачной подаче.", "Even a strong argument weakens with poor delivery.", [
+        "Even a strong argument weakens with poor delivery.",
+        "Even a short lesson improves with more examples.",
+        "Even a correct answer sounds better with practice."
+      ]),
+      speaking("Нам нужно не только звучать точно, но и восприниматься уместно.", "We need not only to sound precise but also to come across as appropriate.", [
+        "We need not only to sound precise but also to come across as appropriate.",
+        "We need not only to speak clearly but also to finish on time.",
+        "We need not only to read quickly but also to answer first."
+      ]),
+      speaking("Такая формулировка слишком разговорная для этой ситуации.", "That wording is too informal for this situation.", [
+        "That wording is too informal for this situation.",
+        "That sentence is too difficult for this unit.",
+        "That example is too short for this lesson."
+      ]),
+      speaking("Настоящее мастерство проявляется в управлении нюансами.", "True mastery shows itself in the control of nuance.", [
+        "True mastery shows itself in the control of nuance.",
+        "Real progress shows itself in the review score.",
+        "Clear improvement shows itself in the final result."
       ])
     ]
   }
