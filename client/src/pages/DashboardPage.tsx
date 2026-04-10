@@ -29,9 +29,7 @@ export function DashboardPage() {
     loadDashboard();
   }, [setUser]);
 
-  if (!user) return null;
-
-  const progressValue = getLevelProgress(user.level, user.xp, user.nextLevelXp);
+  const progressValue = user ? getLevelProgress(user.level, user.xp, user.nextLevelXp) : 0;
   const completedLessons = lessons.filter((lesson) => lesson.completed).length;
   const lessonTypes: Array<QuestionType | "all"> = [
     "all",
@@ -62,6 +60,15 @@ export function DashboardPage() {
         .filter((group) => group.lessons.length > 0),
     [filteredLessons]
   );
+
+  if (!user) {
+    return (
+      <div className="rounded-[28px] border border-white/40 bg-[var(--panel)] p-8 text-center shadow-card">
+        {t(language, "loadingLessons")}
+      </div>
+    );
+  }
+
   return (
     <div className="space-y-6">
       <section className="grid gap-4 lg:grid-cols-[1.2fr,0.8fr]">
